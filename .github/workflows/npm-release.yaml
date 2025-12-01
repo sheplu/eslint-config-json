@@ -6,8 +6,10 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    environment: prod
     permissions:
       contents: read
+      id-token: write
 
     steps:
       - name: Checkout
@@ -18,10 +20,6 @@ jobs:
         with:
           node-version: 24
           registry-url: https://registry.npmjs.org
-
-      - name: NPM install
-        run: |
-          npm install
 
       - name: Version
         if: github.event_name == 'release' && github.event.action == 'created'
@@ -36,6 +34,5 @@ jobs:
           fi
 
       - name: publish
-        env:
-          NPM_TOKEN: ${{secrets.NPM_PUBLISH}}
-        run: rm -rf node-module .github && npm publish --access public
+        run: |
+          npm publish --access public
