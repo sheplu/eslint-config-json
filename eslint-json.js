@@ -1,4 +1,4 @@
-export const eslintJsonRules = {
+export const jsonRules = {
 	rules: {
 		"json/no-duplicate-keys": [
 			"error",
