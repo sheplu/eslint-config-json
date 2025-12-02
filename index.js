@@ -14,3 +14,10 @@ export const defaultJsonConfig = {
 	'language': 'json/json',
 	'extends': [jsonRules],
 };
+
+export const defaultJsoncConfig = {
+	'files': ['**/*.jsonc'],
+	'plugins': { json },
+	'language': 'json/jsonc',
+	'extends': [jsonRules],
+};
