@@ -1,4 +1,5 @@
-import { jsonRules } from "./eslint-json";
+import { jsonRules } from './eslint-json.js';
+import json from '@eslint/json';
 
 export const JsonRules = [
 	{
@@ -9,22 +10,22 @@ export const JsonRules = [
 ];
 
 export const defaultJsonConfig = {
-	'files': ['**/*.json'],
+	'files': [ '**/*.json' ],
 	'plugins': { json },
 	'language': 'json/json',
-	'extends': [jsonRules],
+	'extends': [ jsonRules ],
 };
 
 export const defaultJsoncConfig = {
-	'files': ['**/*.jsonc'],
+	'files': [ '**/*.jsonc' ],
 	'plugins': { json },
 	'language': 'json/jsonc',
-	'extends': [jsonRules],
+	'extends': [ jsonRules ],
 };
 
 export const defaultJson5Config = {
-	'files': ['**/*.json5'],
+	'files': [ '**/*.json5' ],
 	'plugins': { json },
 	'language': 'json/json5',
-	'extends': [jsonRules],
+	'extends': [ jsonRules ],
 };
