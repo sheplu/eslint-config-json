@@ -10,7 +10,18 @@
     "type": "git",
     "url": "git+https://github.com/sheplu/eslint-config-json.git"
   },
-  "keywords": [],
+  "keywords": [
+	"eslint",
+	"eslintconfig",
+	"eslint-config",
+	"eslint-config-json",
+	"eslint-json",
+	"json-lint",
+	"json",
+	"jsonc",
+	"json5",
+	"sheplu"
+  ],
   "author": {
 	"name": "Jean Burellier",
 	"url": "https://github.com/sheplu"
