@@ -11,7 +11,10 @@
     "url": "git+https://github.com/sheplu/eslint-config-json.git"
   },
   "keywords": [],
-  "author": "",
+  "author": {
+	"name": "Jean Burellier",
+	"url": "https://github.com/sheplu"
+  },
   "license": "MIT",
   "type": "module",
   "bugs": {
