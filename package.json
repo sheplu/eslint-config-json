@@ -1,7 +1,7 @@
 {
   "name": "@sheplu/eslint-config-json",
   "version": "1.0.0",
-  "description": "",
+  "description": "Opinionated ESLint rules and config for consistent, high-quality JSON with zero setup.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
