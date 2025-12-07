@@ -1,10 +1,10 @@
-import { jsonRules } from './eslint-json.js';
+import { jsonRules as eslintJsonRules } from './eslint-json.js';
 import json from '@eslint/json';
 
-export const JsonRules = [
+export const jsonRules = [
 	{
 		rules: {
-			...jsonRules.rules,
+			...eslintJsonRules.rules,
 		},
 	},
 ];
