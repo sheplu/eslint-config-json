@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { readdirSync } from 'node:fs';
 import { jsonRules } from '../eslint-json.js';
 
+/* eslint-disable @stylistic/curly-newline */
 describe('Rules', () => {
 	it('has the same number of rules', () => {
 		const fetchedRules = readdirSync('./remote/docs/rules').length;
@@ -21,3 +22,4 @@ describe('Rules', () => {
 		assert.deepEqual(rules, fetchedRules);
 	});
 });
+/* eslint-enable @stylistic/curly-newline */
