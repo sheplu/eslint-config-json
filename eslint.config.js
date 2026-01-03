@@ -1,5 +1,5 @@
 import { defineConfig } from 'eslint/config';
-import markdownRules from '@sheplu/eslint-config/src/markdown.js';
+import { markdownRules } from '@sheplu/eslint-config/src/markdown.js';
 import globals from 'globals';
 import js from '@eslint/js';
 import markdown from '@eslint/markdown';
@@ -10,7 +10,6 @@ export default defineConfig([
 	{
 		'extends': [
 			'js/recommended',
-			// eslintRules,
 			stylisticRules,
 		],
 		'files': [ '**/*.{js,mjs,cjs}' ],
