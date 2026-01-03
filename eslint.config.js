@@ -16,10 +16,7 @@ export default defineConfig([
 		'languageOptions': {
 			globals: globals.node,
 		},
-
 		'plugins': { '@stylistic': stylistic, js },
-		'rules': {
-		},
 	},
 	{
 		'files': [ '**/*.md' ],
