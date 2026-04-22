@@ -17,6 +17,9 @@ export default defineConfig([
 			globals: globals.node,
 		},
 		'plugins': { '@stylistic': stylistic, js },
+		'rules': {
+			'@stylistic/curly-newline': 'warn',
+		},
 	},
 	{
 		'files': [ '**/*.md' ],
