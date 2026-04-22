@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-	"test": "node --test tests/rules.js"
+    "test": "node --test tests/rules.js"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,20 @@
     "url": "https://github.com/sheplu/eslint-config-json/issues"
   },
   "homepage": "https://github.com/sheplu/eslint-config-json#readme",
+  "engines": {
+    "node": ">=24"
+  },
+  "peerDependencies": {
+    "eslint": ">=10",
+    "@eslint/json": ">=1"
+  },
+  "files": [
+    "package.json",
+    "README.md",
+    "LICENSE",
+    "index.js",
+    "eslint-json.js"
+  ],
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@eslint/json": "^1.2.0",
