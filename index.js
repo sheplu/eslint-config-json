@@ -1,4 +1,4 @@
-import { jsonRules as eslintJsonRules } from './eslint-json.js';
+import { jsonRules as eslintJsonRules } from './src/eslint-json.js';
 import json from '@eslint/json';
 
 export const jsonRules = [
