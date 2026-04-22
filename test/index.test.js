@@ -12,7 +12,7 @@ import {
 } from './review-rules.js';
 import assert from 'node:assert/strict';
 import json from '@eslint/json';
-import { jsonRules as sourceJsonRules } from '../eslint-json.js';
+import { jsonRules as sourceJsonRules } from '../src/eslint-json.js';
 
 const validSeverities = new Set([
 	'off',
