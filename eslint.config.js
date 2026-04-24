@@ -1,3 +1,8 @@
+import {
+	defaultJson5Config,
+	defaultJsonConfig,
+	defaultJsoncConfig,
+} from './index.js';
 import { defineConfig } from 'eslint/config';
 import { markdownRules } from '@sheplu/eslint-config/src/markdown.js';
 import globals from 'globals';
@@ -7,6 +12,14 @@ import stylistic from '@stylistic/eslint-plugin';
 import stylisticRules from '@sheplu/eslint-config/src/stylistic.js';
 
 export default defineConfig([
+	{
+		ignores: [
+			'**/package.json',
+			'**/package-lock.json',
+			'**/apkg.json',
+			'**/apkg-lock.json',
+		],
+	},
 	{
 		'extends': [
 			'js/recommended',
@@ -30,4 +43,7 @@ export default defineConfig([
 			frontmatter: 'yaml',
 		},
 	},
+	defaultJsonConfig,
+	defaultJsoncConfig,
+	defaultJson5Config,
 ]);
