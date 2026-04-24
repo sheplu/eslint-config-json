@@ -2,9 +2,11 @@
 # Shared helpers for git hooks. Sourced, not executed.
 
 GREEN='\033[0;32m'
+RED='\033[0;31m'
 RESET='\033[0m'
 
 ok() { printf "${GREEN}%s${RESET}\n" "$1"; }
+fail() { printf "${RED}%s${RESET}\n" "$1" >&2; }
 
 run_parallel() {
   label="$1"
@@ -16,6 +18,9 @@ run_parallel() {
   eval "out_$label=$out"
 }
 
+# wait_step waits for a run_parallel step and prints its buffered output only
+# on failure — steps are awaited in declaration order so messages stay stable
+# even when several ran concurrently.
 wait_step() {
   label="$1"
   eval "pid=\$pid_$label"
@@ -25,8 +30,8 @@ wait_step() {
     ok "✔ $label passed"
   else
     status=$?
-    echo "------ $label failed ------"
-    cat "$out"
+    fail "------ $label failed ------"
+    cat "$out" >&2
     rm -f "$out"
     exit $status
   fi
