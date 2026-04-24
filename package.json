@@ -3,6 +3,14 @@
   "version": "1.0.0",
   "description": "Opinionated ESLint rules and config for consistent, high-quality JSON with zero setup.",
   "main": "index.js",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -48,7 +56,8 @@
     "README.md",
     "LICENSE",
     "index.js",
-    "eslint-json.js"
+    "index.d.ts",
+    "src"
   ],
   "devDependencies": {
     "@eslint/js": "^10.0.1",
