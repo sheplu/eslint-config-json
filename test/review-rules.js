@@ -1,5 +1,6 @@
 const UPSTREAM_URL = 'https://api.github.com/repos/eslint/json/contents/docs/rules';
 const IGNORED_BASENAMES = new Set([ 'README', 'index' ]);
+const MIN_EXPECTED_RULES = 4;
 
 export function parseUpstreamRules(apiResponse) {
 	if (!Array.isArray(apiResponse)) {
@@ -25,7 +26,21 @@ export async function fetchUpstreamRules() {
 		throw new Error(`Upstream fetch failed: ${response.status} ${response.statusText}`);
 	}
 
-	return parseUpstreamRules(await response.json());
+	const contentType = response.headers.get('content-type') ?? '';
+
+	if (!contentType.includes('application/json')) {
+		throw new Error(`Unexpected content-type from ${UPSTREAM_URL}: ${contentType}`);
+	}
+
+	const names = parseUpstreamRules(await response.json());
+
+	if (names.length < MIN_EXPECTED_RULES) {
+		const head = `Parsed only ${names.length} rules (expected >= ${MIN_EXPECTED_RULES})`;
+
+		throw new Error(`${head} from ${UPSTREAM_URL} — upstream shape likely changed.`);
+	}
+
+	return names;
 }
 
 export function diffRules(configRuleNames, upstreamRuleNames) {
